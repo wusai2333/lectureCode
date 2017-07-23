@@ -27,6 +27,7 @@ public class SLList<Blorp> implements List61B<Blorp>{
         sentinel.next = new Node(x, null);
     }
 
+    @Override
     /** Adds an item of the front. */
     public void addFirst(Blorp x) {
         Node oldFrontNode = sentinel.next;
@@ -35,11 +36,13 @@ public class SLList<Blorp> implements List61B<Blorp>{
         size += 1;
     }
 
+    @Override
     /** Gets the front item of the list. */
     public Blorp getFirst() {
         return sentinel.next.item;
     }
 
+    @Override
     /** Puts an item at the back of the list. */
     public void addLast(Blorp x) {
         size += 1;
@@ -65,12 +68,14 @@ public class SLList<Blorp> implements List61B<Blorp>{
         return p;
     }
 
+    @Override
     /** Returns last item */
     public Blorp getLast() {
         Node back = getLastNode();
         return back.item;
     }
 
+    @Override
     /** Deletes and returns last item. */
     public Blorp removeLast() {
         Node back = getLastNode();
@@ -88,10 +93,12 @@ public class SLList<Blorp> implements List61B<Blorp>{
         return back.item;
     }
 
+    @Override
     public int size() {
         return size;
     }
 
+    @Override
     /** Gets the positionth item of the list. */
     public Blorp get(int position) {
         if (position == 0) {
@@ -106,6 +113,7 @@ public class SLList<Blorp> implements List61B<Blorp>{
         return currentNode.item;
     }
 
+    @Override
     /** Inserts item into given position.
      * Code from discussion #3 */
     public void insert(Blorp item, int position) {
@@ -125,5 +133,13 @@ public class SLList<Blorp> implements List61B<Blorp>{
     }
 
     /** TODO: Add a print method that overrides List61B's inefficient print method. */
+    @Override
+    public void print() {
+        System.out.println("13413241");
+        for (Node p = sentinel.next; p != null; p = p.next) {
+            System.out.print(p.item + " ");
+        }
+        System.out.println();
+    }
 
 } 

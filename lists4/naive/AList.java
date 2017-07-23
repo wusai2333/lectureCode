@@ -15,15 +15,26 @@
 public class AList {
     private int[] items;
     private int size;
-
+    private int maxsize;
     /** Creates an empty list. */
     public AList() {
-        items = new int[100];
+        maxsize = 100;
+        items = new int[maxsize];
         size = 0;
+    }
+
+    private void resize(int capacity) {
+        int[] a = new int[capacity];
+        System.arraycopy(items, 0 , a, 0, size);
+        items = a;
     }
 
     /** Inserts X into the back of the list. */
     public void addLast(int x) {
+        if (size == maxsize) {
+            maxsize = 2 * maxsize;
+            resize(maxsize);
+        }
         items[size] = x;
         size = size + 1;
     }
@@ -47,6 +58,10 @@ public class AList {
     public int removeLast() {
         int x = getLast();
         size = size - 1;
+        if (size == maxsize / 2) {
+            maxsize /= 2;
+            resize(maxsize);
+        }
         return x;
     }
 } 

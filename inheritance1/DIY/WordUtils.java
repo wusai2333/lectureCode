@@ -1,6 +1,6 @@
 public class WordUtils {
    /** Returns the length of the longest word. */
-   public static String longest(SLList<String> list) {
+   public static String longest(List61B<String> list) {
       int maxDex = 0;
       for (int i = 0; i < list.size(); i += 1) {
          String longestString = list.get(maxDex);
@@ -12,12 +12,19 @@ public class WordUtils {
       return list.get(maxDex);
    }
 
+
+
   public static void main(String[] args) {
-     SLList<String> someList = new SLList<>();
+     List61B<String> someList = new AList<>();
+     SLList<String> anotherList = new SLList<>();
      someList.addLast("elk");
      someList.addLast("are");
      someList.addLast("watching");
+     anotherList.addFirst("sdf");
+     anotherList.addLast("pigfff");
      System.out.println(longest(someList));
-     //someList.print();
+     System.out.println(longest(anotherList));
+     someList.print();
+     anotherList.print();
   }
 }

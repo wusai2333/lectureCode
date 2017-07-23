@@ -28,9 +28,20 @@ public class IntList {
 
 	/** Returns the ith value in this list.*/
 	public int get(int i) {
-
+		if (i == 0) return this.first;
+		return this.rest.get(i-1);
 	}
 
+	public void print() {
+		if (this == null) {
+			return;
+		}
+		System.out.print(this.first + " ");
+		if (this.rest != null) {
+			this.rest.print();
+		}
+	
+	}
 	public static void main(String[] args) {
 		IntList L = new IntList(15, null);
 		L = new IntList(10, L);

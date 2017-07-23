@@ -34,10 +34,14 @@ public class ExtraIntListPractice {
         // code for incrList and dincrList into IntList.java and
         // run it in the visualizer.
         System.out.println(L.get(1));
-        dincrList(L, 3);
+        IntList r = dincrList(L, 3);
         while(L != null) {
           System.out.println(L.first);
           L = L.rest;
+        } 
+        while(r != null) {
+          System.out.println(r.first);
+          r = r.rest;
         }       
     }
 }
