@@ -1,4 +1,4 @@
-public class Dog {
+public class Dog implements Comparable<Dog> {
     private String name;
     private int size;
 
@@ -9,5 +9,9 @@ public class Dog {
 
     public void bark() {
         System.out.println(name + " says: bark");
+    }
+    
+    public int compareTo(Dog uddaDog) {
+        return this.size - uddaDog.size;
     }
 }

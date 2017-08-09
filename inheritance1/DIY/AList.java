@@ -10,7 +10,7 @@ public class AList<Item> implements List61B<Item> {
 	/* the stored integers */
 	private Item[] items;
 	private int size;
-
+    public Item BlaBla;
 	private static int RFACTOR = 2;
 
     /** Creates an empty list. */
@@ -18,13 +18,16 @@ public class AList<Item> implements List61B<Item> {
     	size = 0;
     	items = (Item[]) new Object[100];
     }
+    public AList(Item x) {
+        BlaBla = x;
+    }
 
     /** Resize our backing array so that it is
       * of the given capacity. */
     private void resize(int capacity) {
     	Item[] a = (Item[]) new Object[capacity];
     	System.arraycopy(items, 0, a, 0, size);
-    	items = a;    	
+    	items = a;
     }
 
     @Override
@@ -54,7 +57,7 @@ public class AList<Item> implements List61B<Item> {
     @Override
     /** Returns the number of items in the list. */
     public int size() {
-        return size;        
+        return size;
     }
 
     @Override
@@ -94,4 +97,4 @@ public class AList<Item> implements List61B<Item> {
         return get(0);
     }
 
-} 
+}

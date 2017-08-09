@@ -8,10 +8,10 @@ public class WordUtils {
          if (thisString.length() > longestString.length()) {
             maxDex = i;
          }
+
       }
       return list.get(maxDex);
    }
-
 
 
   public static void main(String[] args) {
@@ -20,11 +20,14 @@ public class WordUtils {
      someList.addLast("elk");
      someList.addLast("are");
      someList.addLast("watching");
-     anotherList.addFirst("sdf");
-     anotherList.addLast("pigfff");
-     System.out.println(longest(someList));
-     System.out.println(longest(anotherList));
-     someList.print();
-     anotherList.print();
+     String s = someList.get(1);
+     s = new AList<String>("ass").BlaBla;
+     System.out.println(s);
+//     anotherList.addFirst("sdf");
+//     anotherList.addLast("pigfff");
+//     System.out.println(longest(someList));
+//     System.out.println(longest(anotherList));
+//     someList.print();
+//     anotherList.print();
   }
 }

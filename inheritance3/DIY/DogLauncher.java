@@ -6,5 +6,6 @@ public class DogLauncher {
         Dog[] dogs = new Dog[]{d1, d2, d3};
         System.out.println(Maximizer.max(dogs));
         Dog d = (Dog) Maximizer.max(dogs);
+        d.bark();
     }
 }

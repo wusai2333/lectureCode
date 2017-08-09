@@ -32,14 +32,17 @@ public class VengefulSLList<Item> extends SLList<Item> {
 		vs1.addLast(10);
 		vs1.addLast(13);
 		// vs1 is now: [1, 5, 10, 13] 
-
-
+        SLList<Integer> s1 = vs1;
+        s1.addLast(50);
+        s1.removeLast();
 		vs1.removeLast();
 		vs1.removeLast();
 		// After deletion, vs1 is: [1, 5]
-
+        // s1.printLostItems(); 
 		// Should print out the numbers of the fallen, namely 10 and 13.
 		System.out.print("The fallen are: ");
-		vs1.printLostItems();
+        vs1.printLostItems();
+        VengefulSLList<Integer> vs2 = s1;
+
 	}
 } 
